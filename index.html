@@ -10,7 +10,6 @@
 <body onload="init()">
     <div id="container-div" style="width: 400px; height: 800px;"></div>
     <p id="demo"></p>
-    <p id="demoone"></p>
 
     <script type="text/javascript">
         var containerDiv = document.getElementById("container-div");
@@ -60,7 +59,8 @@
                     var attributeMap = contact.getAttributes();
                     var phone = JSON.stringify(attributeMap["customernumber"]["value"]);
                     console.log(phone);
-                    window.alert("Customer's phone # (onConnecting): " + phone);
+                    //window.alert("Customer's phone # (onConnecting): " + phone);
+                    document.getElementById("demo").innerHTML = phone;
 
                 });
 
@@ -73,12 +73,7 @@
         }
 
     </script>
-    <h2>The getElementById() Method</h2>
-    <p id="demo"></p>
 
-    <script>
-        document.getElementById("demo").innerHTML = phone;
-    </script>
 
 </body>
 
