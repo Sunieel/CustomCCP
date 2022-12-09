@@ -9,6 +9,8 @@
 
 <body onload="init()">
     <div id="container-div" style="width: 400px; height: 800px;"></div>
+    <p id="demo"></p>
+    <p id="demoone"></p>
 
     <script type="text/javascript">
         var containerDiv = document.getElementById("container-div");
@@ -44,22 +46,24 @@
             });
         }
 
-        var c;
         connect.contact(function (contact) {
+            var c;
             c = contact;
             c.onConnecting(function (c) {
                 var attr = c.getAttributes();
-                var c1 = c.getConnections()[1];
-                var c2 = c.getStatus();
-                document.getElementById("contactID").value = c.contactId;
-                document.getElementById("phoneNumber").value = c1.getAddress()['phoneNumber'];
+
                 if (attr.customernumber) {
                     console.log(" Here's your value for customernumber" + attr.customernumber.value);
                 }
             });
         });
 
+        document.getElementById("demo").innerHTML = attr.customernumber.value;
+        document.getElementById("demo").innerHTML = "Hello World";
+
     </script>
+
+
 </body>
 
 </html>
