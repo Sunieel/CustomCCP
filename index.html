@@ -53,11 +53,8 @@
                 var c2 = c.getStatus();
                 document.getElementById("contactID").value = c.contactId;
                 document.getElementById("phoneNumber").value = c1.getAddress()['phoneNumber'];
-                if (attr.firstName) {
-                    console.log(" Here's your value for firstName" + attr.firstName.value);
-                }
-                if (attr.lastName) {
-                    console.log("Here's your value for lastName " + attr.lastName.value);
+                if (attr.customernumber) {
+                    console.log(" Here's your value for customernumber" + attr.customernumber.value);
                 }
             });
         });
