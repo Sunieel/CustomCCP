@@ -9,6 +9,7 @@
 
 <body onload="init()">
     <div id="container-div" style="width: 400px; height: 800px;"></div>
+
     <script type="text/javascript">
         var containerDiv = document.getElementById("container-div");
         var instanceURL = "https://testingissueshere.my.connect.aws/connect/ccp-v2/";
@@ -42,6 +43,25 @@
                 ccpLoadTimeout: 10000 //optional, defaults to 5000 (ms)
             });
         }
+
+        var c;
+        connect.contact(function (contact) {
+            c = contact;
+            c.onConnecting(function (c) {
+                var attr = c.getAttributes();
+                var c1 = c.getConnections()[1];
+                var c2 = c.getStatus();
+                document.getElementById("contactID").value = c.contactId;
+                document.getElementById("phoneNumber").value = c1.getAddress()['phoneNumber'];
+                if (attr.firstName) {
+                    console.log(Here's your value for firstName " + attr.firstName.value);
+            }
+                if (attr.lastName) {
+                    console.log(Here's your value for lastName " + attr.lastName.value);
+            }
+            });
+        });
+
     </script>
 </body>
 
