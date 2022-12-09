@@ -44,26 +44,25 @@
                 ccpSynTimeout: 3000, //optional, defaults to 1000 (ms)
                 ccpLoadTimeout: 10000 //optional, defaults to 5000 (ms)
             });
+
+            connect.contact(function (contact) {
+                var c;
+                c = contact;
+                c.onConnecting(function (c) {
+                    var attr = c.getAttributes();
+
+                    if (attr.customernumber) {
+                        console.log(" Here's your value for customernumber" + attr.customernumber.value);
+                    }
+                });
+            });
+
+            document.getElementById("demo").innerHTML = attr.customernumber.value;
+            document.getElementById("demoone").innerHTML = "Hello World";
+
         }
 
-        connect.contact(function (contact) {
-            var c;
-            c = contact;
-            c.onConnecting(function (c) {
-                var attr = c.getAttributes();
-
-                if (attr.customernumber) {
-                    console.log(" Here's your value for customernumber" + attr.customernumber.value);
-                }
-            });
-        });
-
-        document.getElementById("demo").innerHTML = attr.customernumber.value;
-        document.getElementById("demo").innerHTML = "Hello World";
-
     </script>
-
-
 </body>
 
 </html>
