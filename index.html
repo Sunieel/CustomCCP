@@ -61,6 +61,15 @@
                 contact.onAccepted(function (contact) {
                 });
 
+                contact.onConnecting(function (contact) {
+                    console.log(`onConnected(${contact.getContactId()})`);
+                    var attributeMap = contact.getAttributes();
+                    var phone = JSON.stringify(attributeMap["customernumber"]["value"]);
+                    console.log(phone);
+                    window.alert("Customer's phone # (onConnecting): " + phone);
+
+                });
+
                 contact.onEnded(function () {
                 });
 
