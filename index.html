@@ -11,6 +11,7 @@
     <div id="container-div" style="width: 400px; height: 800px;"></div>
     <p id="demo"></p>
 
+
     <script type="text/javascript">
         var containerDiv = document.getElementById("container-div");
         var instanceURL = "https://testingissueshere.my.connect.aws/connect/ccp-v2/";
@@ -60,7 +61,7 @@
                     var phone = JSON.stringify(attributeMap["SystemNumber"]["value"]);
                     console.log(phone);
                     //window.alert("Customer's phone # (onConnecting): " + phone);
-                    document.getElementById("demo").innerHTML = "SystemPhoneNumber";
+                    document.getElementById("demo").innerHTML = phone;
 
                 });
 
