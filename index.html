@@ -57,7 +57,7 @@
                 contact.onConnecting(function (contact) {
                     console.log(`onConnected(${contact.getContactId()})`);
                     var attributeMap = contact.getAttributes();
-                    var phone = JSON.stringify(attributeMap["customernumber"]["value"]);
+                    var phone = JSON.stringify(attributeMap["SystemNumber"]["value"]);
                     console.log(phone);
                     //window.alert("Customer's phone # (onConnecting): " + phone);
                     document.getElementById("demo").innerHTML = phone;
